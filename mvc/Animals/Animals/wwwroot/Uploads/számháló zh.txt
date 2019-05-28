@@ -1,0 +1,13 @@
+egyszerû számítás like 1. gyak & 2. gyak
+CDMA 
+Hamming távolság
+bit és bájt beszúrás 
+CRC biztos mind a két irányba
+//4. bõl semmi
+bináris visszaszámlálás protokol
+adaptiv fa bejárás
+minimális keret
+
+6. gyak
+
+2. feladat

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Animals>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Név
+            </th>
+            <th>
+                Születési dátum
+            </th>
+            <th>
+                Fajta
+            </th>
+            <th>
+                Kép
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                <img src="@Url.Action("ImageForBuilding", new {AnimalID = item.ID})" class="contentImage" />
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

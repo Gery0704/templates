@@ -1,0 +1,51 @@
+﻿
+@using Animals.Models;
+@using System;
+
+@model AnimalPicModel
+
+<form asp-controller="Home" asp-action="PictureUpload" method="post" enctype="multipart/form-data">
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <div asp-validation-summary="ModelOnly" class="failureNotification"></div>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                Helyszín:
+            </td>
+            <td class="failureNotification">
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="120">
+                Fajta:
+            </td>
+            <td class="failureNotification">
+                @Html.Hidden("ID")
+                @Html.DropDownList("AnimalType", ViewBag.List as SelectList)
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                kép:
+            </td>
+            <td class="failureNotification">
+                <div class="col-md-10">
+                    <input type="file" name="Picture" class="form-control" />
+                    <span asp-validation-for="Picture" class="text-danger"></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="50">
+                <input type="submit" value="Mentés" class="button" />
+            </td>
+        </tr>
+    </table>
+</form>
